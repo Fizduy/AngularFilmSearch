@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 export interface FilmList {
   Search: {
@@ -32,8 +33,9 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  getItems(value: string) {
-    return this.http.get<FilmList>(`${this.url}?apikey=${this.apikey}&s=${value}`);
+  searchItems(value: string) {
+    return this.http.get<FilmList>(`${this.url}?apikey=${this.apikey}&s=${value}`)
+    .pipe(map((data: FilmList) => (data['Response'] === 'True') ? data['Search'] : []));
   }
 
   getDescription(id: string) {

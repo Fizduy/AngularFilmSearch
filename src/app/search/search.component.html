@@ -1,4 +1,3 @@
-
 <mat-toolbar color="primary">
   <mat-form-field class="example-full-width">
     <input type="text"
@@ -8,7 +7,7 @@
            [formControl]="myControl"
            [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Title">
+      <mat-option *ngFor="let option of options | async" [value]="option.Title">
           <a class="link" [routerLink]="['/description', option.imdbID]">
               {{option.Title}}
           </a>
@@ -16,4 +15,3 @@
     </mat-autocomplete>
   </mat-form-field>
 </mat-toolbar>
-
