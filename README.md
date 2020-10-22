@@ -1,4 +1,9 @@
-# AngularTest
+# AngularFilmSearch
+
+SPA-приложение с использованием живого поиска фильмов (через API OMDb) и компонентов Angular Material
+
+После ввода первых 5 символов названия в выпадающем списке предлагается несколько подходящих фильмов
+При клике на один из результатов поиска - открывается карточка этого фильма с описанием.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
 
